@@ -1,0 +1,15 @@
+{
+  "name": "starter",
+  "version": "1.0.0",
+  "description": "landing page for natours",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "compile:saas": "node-saas saas/main.scss css/style.css"
+  },
+  "devDependencies": {
+    "saas": "^1.0.0"
+  }
+}
