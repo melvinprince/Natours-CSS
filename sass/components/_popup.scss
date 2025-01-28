@@ -26,6 +26,11 @@
       font-size: 4rem;
       display: inline-block;
       transition: all 0.2s;
+
+      @include custom-screen(420px) {
+        top: -1rem;
+        right: 1rem;
+      }
     }
 
     &:hover {
@@ -55,18 +60,43 @@
     overflow: hidden;
     opacity: 0;
     transition: all 0.5s 0.1s;
+
+    @include custom-screen(1100px) {
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: 90%;
+    }
+    @include custom-screen(420px) {
+      overflow: scroll;
+      height: 80%;
+    }
   }
 
   &__left {
     width: 33.33%;
+    @include custom-screen(1100px) {
+      width: 100%;
+      display: flex;
+    }
   }
   &__right {
     width: 66.66%;
     padding: 3rem 5rem;
+    align-self: center;
+    text-align: center;
+    @include custom-screen(1100px) {
+      width: 100%;
+    }
   }
   &__img {
     display: block;
     width: 100%;
+    @include custom-screen(1100px) {
+      width: 50%;
+    }
+    @include custom-screen(1100px) {
+      display: none;
+    }
   }
   &__text {
     font-size: 1.4rem;
@@ -84,5 +114,12 @@
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
+
+    @include custom-screen(600px) {
+      column-count: 1;
+    }
+    @include custom-screen(420px) {
+      overflow: scroll;
+    }
   }
 }

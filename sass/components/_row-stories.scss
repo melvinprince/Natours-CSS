@@ -4,10 +4,27 @@
   box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
   background-color: rgba($color-white, 0.6);
   border-radius: 3px;
-  padding: 6rem;
-  padding-left: 9rem;
+  padding: 6rem 6rem 6rem 9rem;
   font-size: $default-font-size;
   transform: skewX(-12deg);
+
+  @include responsive(tab-port) {
+    width: 100%;
+    padding: 4rem;
+    padding-left: 7rem;
+  }
+
+  @include responsive(phone) {
+    transform: skewX(0);
+  }
+
+  @include custom-screen(500px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6rem 2rem 6rem 2rem;
+  }
 
   &__shape {
     width: 15rem;
@@ -17,12 +34,22 @@
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
     position: relative;
+    @include responsive(phone) {
+      transform: translateX(-3rem) skewX(0);
+    }
+    @include custom-screen(500px) {
+      transform: translateX(0) scale(1);
+      margin-bottom: 2rem;
+    }
   }
 
   &__img {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
     transition: all 0.5s;
+    @include custom-screen(500px) {
+      transform: translateX(-4rem) scale(1.4);
+    }
   }
 
   &__caption {
@@ -41,6 +68,9 @@
 
   &__text {
     transform: skewX(12deg);
+    @include responsive(phone) {
+      transform: skewX(0);
+    }
   }
 
   &:hover &__caption {

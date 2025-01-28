@@ -1,6 +1,20 @@
 .composition {
   position: relative;
 
+  @include custom-screen(805px) {
+    margin-top: 5rem;
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    width: 50%;
+  }
+  @include custom-screen(600px) {
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   &_photo {
     width: 50%;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
@@ -9,6 +23,10 @@
     z-index: 10;
     transition: all 0.2s;
     outline-offset: 2rem;
+
+    @include custom-screen(600px) {
+      width: 100%;
+    }
 
     &--p1 {
       left: 30%;
@@ -21,6 +39,43 @@
     &--p3 {
       left: 40%;
       top: 15rem;
+    }
+
+    @include custom-screen(1200px) {
+      width: 70%;
+      &--p1 {
+        left: 10%;
+        top: 3rem;
+      }
+      &--p2 {
+        left: 60%;
+        top: 10rem;
+      }
+      &--p3 {
+        left: 40%;
+        top: 20rem;
+      }
+    }
+
+    @include custom-screen(1050px) {
+      width: 70%;
+      &--p1 {
+        left: 30%;
+        top: 3rem;
+      }
+      &--p2 {
+        left: 60%;
+        top: 15rem;
+      }
+      &--p3 {
+        left: 40%;
+        top: 28rem;
+      }
+    }
+    @include custom-screen(805px) {
+      position: relative;
+      top: 0;
+      left: 0;
     }
 
     &:hover {
